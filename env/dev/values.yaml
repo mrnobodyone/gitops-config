@@ -1,0 +1,4 @@
+image:
+  tag: sha-0000000
+ingress:
+  host: dev.shortener.lab

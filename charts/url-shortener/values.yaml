@@ -1,0 +1,15 @@
+image:
+  repository: ghcr.io/<твой-логин>/url-shortener
+  tag: ""
+service:
+  port: 80
+ingress:
+  enabled: true
+  className: traefik
+  host: shortener.lab
+  clusterIssuer: lab-ca
+persistence:
+  size: 100Mi
+resources:
+  requests: {cpu: 50m, memory: 64Mi}
+  limits: {cpu: 250m, memory: 128Mi}
