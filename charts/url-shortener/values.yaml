@@ -1,5 +1,5 @@
 image:
-  repository: ghcr.io/<твой-логин>/url-shortener
+  repository: ghcr.io/mrnobodyone/url-shortener
   tag: ""
 service:
   port: 80
