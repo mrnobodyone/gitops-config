@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: shortener-prod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/<твой-логин>/gitops-config.git
+    targetRevision: main
+    path: charts/url-shortener
+    helm:
+      valueFiles:
+        - ../../envs/prod/values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: prod
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
