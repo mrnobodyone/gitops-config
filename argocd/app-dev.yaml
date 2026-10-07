@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/<твой-логин>/gitops-config.git
+    repoURL: https://github.com/mrnobodyone/gitops-config.git
     targetRevision: main
     path: charts/url-shortener
     helm:
