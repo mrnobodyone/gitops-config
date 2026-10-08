@@ -1,4 +1,4 @@
 image:
-  tag: sha-5d21f33
+  tag: sha-1c70346
 ingress:
   host: dev.shortener.lab
