@@ -2,3 +2,4 @@ image:
   tag: sha-3d3241e
 ingress:
   host: dev.shortener.lab
+metrics: {serviceMonitor: {enabled: true}}

@@ -2,3 +2,4 @@ image:
   tag: 0.1.0
 ingress:
   host: prod.shortener.lab
+metrics: {serviceMonitor: {enabled: true}}
