@@ -42,6 +42,22 @@ alertmanager:
     resources:
       requests: {cpu: 10m, memory: 32Mi}
       limits: {memory: 96Mi}
+    secrets: [alertmanager-telegram]
+  config:
+    route:
+      receiver: telegram
+      group_by: [alertname, namespace]
+      routes:
+        - receiver: "null"
+          matchers:
+            - alertname =~ "Watchdog|InfoInhibitor"
+    receivers:
+      - name: "null"
+      - name: telegram
+        telegram_configs:
+          - bot_token_file: /etc/alertmanager/secrets/alertmanager-telegram/token
+            chat_id: 439002384
+            send_resolved: true
 
 grafana:
   nodeSelector: {role: monitoring}
